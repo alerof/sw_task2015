@@ -482,12 +482,47 @@ foaf:Person rdf:type owl:Class ;
 
 
 
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#believe_album
+
+:believe_album rdf:type :Album ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Believe" ;
+               
+               :date 2012 ;
+               
+               :author_is :justin_bieber .
+
+
+
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#blues
 
 :blues rdf:type :MusicalStyle ,
                 owl:NamedIndividual ;
        
        rdfs:label "Blues" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#boston_td_garden_2013
+
+:boston_td_garden_2013 rdf:type :Concert ,
+                                owl:NamedIndividual ;
+                       
+                       rdfs:label "Boston TD Garden 2013" ;
+                       
+                       :date "07.20.2013" ;
+                       
+                       :where :boston_usa .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#boston_usa
+
+:boston_usa rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+            
+            rdfs:label "Boston, USA" .
 
 
 
@@ -754,6 +789,22 @@ foaf:Person rdf:type owl:Class ;
 
 
 
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#justin_bieber
+
+:justin_bieber rdf:type :SoloMusicArtist ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Justin Bieber" ;
+               
+               rdfs:seeAlso "http://en.wikipedia.org/wiki/Justin_Bieber" ;
+               
+               rdfs:comment "is a Canadian singer and songwriter" ;
+               
+               :in_style :pop ,
+                         :r_and_b .
+
+
+
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#k-pop
 
 :k-pop rdf:type :MusicalStyle ,
@@ -936,6 +987,15 @@ foaf:Person rdf:type owl:Class ;
                                 <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
                        
                        rdfs:label "Pretoria, South Africa" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#r_and_b
+
+:r_and_b rdf:type :MusicalStyle ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "R&B" .
 
 
 
@@ -1281,9 +1341,7 @@ Salvation""" ;
 :spirit_song_2015 rdf:type :Concert ,
                            owl:NamedIndividual ;
                   
-                  rdfs:label """Spirit Song
-6300 Kings Island Dr
-Mason, OH""" ;
+                  rdfs:label "Spirit Song 6300 Kings Island Dr Mason, OH, 2015" ;
                   
                   :date "06.26.2015 7:00" ;
                   
