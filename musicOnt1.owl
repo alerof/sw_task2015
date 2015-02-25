@@ -1,0 +1,817 @@
+@prefix : <http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt> .
+
+<http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#author
+
+:author rdf:type owl:ObjectProperty ;
+        
+        rdfs:domain :Lyrics ;
+        
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        
+        rdfs:range foaf:Agent .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#author_is
+
+:author_is rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :MusicArtist ;
+           
+           rdfs:domain :MusicComposition ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#end_album
+
+:end_album rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Album ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :date ;
+                        owl:someValuesFrom xsd:dateTime
+                      ] .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#group_role
+
+:group_role rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :MusicGroupMember ;
+            
+            rdfs:range :MusicGroupRole ;
+            
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#has_member
+
+:has_member rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :MusicGroup ;
+            
+            rdfs:range :MusicGroupMember ;
+            
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#has_сomposition
+
+:has_сomposition rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Album ;
+                 
+                 rdfs:range :MusicComposition ;
+                 
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#in_album
+
+:in_album rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Album ;
+          
+          rdfs:domain :MusicComposition ;
+          
+          owl:inverseOf :has_сomposition ;
+          
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#in_style
+
+:in_style rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :MusicArtist ;
+          
+          rdfs:range :MusicalStyle ;
+          
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#item
+
+:item rdf:type owl:ObjectProperty ;
+      
+      rdfs:range :MusicItem ;
+      
+      rdfs:domain :MusicProduction ;
+      
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#perfomance_composition
+
+:perfomance_composition rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:range :MusicComposition ;
+                        
+                        rdfs:domain :MusicPerfomance ;
+                        
+                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#perfomance_event
+
+:perfomance_event rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :MusicEvent ;
+                  
+                  rdfs:domain :MusicPerfomance ;
+                  
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#performer_production
+
+:performer_production rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:range :MusicArtist ;
+                      
+                      rdfs:domain :MusicProduction ;
+                      
+                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#product_as
+
+:product_as rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :MusicComposition ;
+            
+            rdfs:range :MusicProduction ;
+            
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#publisher
+
+:publisher rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :MusicProduction ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           
+           rdfs:range foaf:Agent .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#start_album
+
+:start_album rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain :Album ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :date ;
+                          owl:someValuesFrom xsd:dateTime
+                        ] .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#text
+
+:text rdf:type owl:ObjectProperty ;
+      
+      rdfs:range :Lyrics ;
+      
+      rdfs:domain :MusicComposition ;
+      
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#when
+
+:when rdf:type owl:ObjectProperty ;
+      
+      rdfs:domain :Lyrics ,
+                  :MusicEvent ,
+                  :MusicProduction ;
+      
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      
+      rdfs:range [ rdf:type owl:Restriction ;
+                   owl:onProperty :date ;
+                   owl:someValuesFrom xsd:dateTime
+                 ] .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#where
+
+:where rdf:type owl:ObjectProperty ;
+       
+       rdfs:domain :MusicEvent ,
+                   :MusicProduction ;
+       
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       
+       rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#date
+
+:date rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Album
+
+:Album rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Concert
+
+:Concert rdf:type owl:Class ;
+         
+         rdfs:subClassOf :MusicEvent .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Festival
+
+:Festival rdf:type owl:Class ;
+          
+          rdfs:subClassOf :MusicEvent .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Lyrics
+
+:Lyrics rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicArtist
+
+:MusicArtist rdf:type owl:Class ;
+             
+             rdfs:label "MusicArtist" ;
+             
+             rdfs:subClassOf foaf:Agent ;
+             
+             rdfs:comment "include music groups and solo music artists" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicComposition
+
+:MusicComposition rdf:type owl:Class ;
+                  
+                  rdfs:label "MusicComposition" ;
+                  
+                  rdfs:comment "The intellectual or artistic realization of a work" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicEvent
+
+:MusicEvent rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicGroup
+
+:MusicGroup rdf:type owl:Class ;
+            
+            rdfs:subClassOf :MusicArtist ,
+                            foaf:Group .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicGroupMember
+
+:MusicGroupMember rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf foaf:Person .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicGroupRole
+
+:MusicGroupRole rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicItem
+
+:MusicItem rdf:type owl:Class ;
+           
+           rdfs:comment "A single exemplar of a musical expression" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicPerfomance
+
+:MusicPerfomance rdf:type owl:Class ;
+                 
+                 rdfs:comment "perfomance music composition in some event" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicProduction
+
+:MusicProduction rdf:type owl:Class ;
+                 
+                 rdfs:label "MusicProduction" ;
+                 
+                 rdfs:comment "This entity is related to the edition/production/publication of a musical composition" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MusicalStyle
+
+:MusicalStyle rdf:type owl:Class ;
+              
+              rdfs:comment "Music comes in many different types and styles ranging from traditional rock music to world pop, easy listening and bluegrass. Many genres have a rich history or geographical significance, a cult following or music roots that go far beyond the 20th century" ;
+              
+              rdfs:seeAlso "http://www.musicgenreslist.com" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#SoloMusicArtist
+
+:SoloMusicArtist rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :MusicArtist ,
+                                 foaf:Person .
+
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:label "geo:SpatialThing" .
+
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+
+foaf:Agent rdf:type owl:Class ;
+           
+           rdfs:label "foaf:Agent" ;
+           
+           rdfs:comment "The Agent class is the class of agents; things that do stuff. A well known sub-class is Person, representing people. Other kinds of agents include Organization and Group." .
+
+
+
+###  http://xmlns.com/foaf/0.1/Group
+
+foaf:Group rdf:type owl:Class ;
+           
+           rdfs:label "foaf:Group" ;
+           
+           rdfs:subClassOf foaf:Agent ;
+           
+           rdfs:comment "The Group class represents a collection of individual agents (and may itself play the role of a Agent, ie. something that can perform actions)" .
+
+
+
+###  http://xmlns.com/foaf/0.1/Person
+
+foaf:Person rdf:type owl:Class ;
+            
+            rdfs:label "foaf:Person" ;
+            
+            rdfs:subClassOf foaf:Agent ;
+            
+            rdfs:comment "The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF." .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Alternative_Music
+
+:Alternative_Music rdf:type :MusicalStyle ,
+                            owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#AudioFile
+
+:AudioFile rdf:type :MusicItem ,
+                    owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Beats
+
+:Beats rdf:type :MusicalStyle ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Blues
+
+:Blues rdf:type :MusicalStyle ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#CD
+
+:CD rdf:type :MusicItem ,
+             owl:NamedIndividual ;
+    
+    rdfs:comment "Compact Disc" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Christian_Lorenz
+
+:Christian_Lorenz rdf:type owl:NamedIndividual ,
+                           foaf:Person ;
+                  
+                  rdfs:seeAlso "http://en.wikipedia.org/wiki/Christian_Lorenz" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Christoph_Schneider
+
+:Christoph_Schneider rdf:type owl:NamedIndividual ,
+                              foaf:Person ;
+                     
+                     rdfs:seeAlso "http://en.wikipedia.org/wiki/Christoph_Schneider" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Classical_Music
+
+:Classical_Music rdf:type :MusicalStyle ,
+                          owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Country_Music
+
+:Country_Music rdf:type :MusicalStyle ,
+                        owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#DVDA
+
+:DVDA rdf:type :MusicItem ,
+               owl:NamedIndividual ;
+      
+      rdfs:comment "DVD-Audio" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Dance_Music
+
+:Dance_Music rdf:type :MusicalStyle ,
+                      owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Easy_Listening
+
+:Easy_Listening rdf:type :MusicalStyle ,
+                         owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Electronic_Music
+
+:Electronic_Music rdf:type :MusicalStyle ,
+                           owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#European_Pop
+
+:European_Pop rdf:type :MusicalStyle ,
+                       owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Folk
+
+:Folk rdf:type :MusicalStyle ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Hip_Hop
+
+:Hip_Hop rdf:type :MusicalStyle ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Indie_Pop
+
+:Indie_Pop rdf:type :MusicalStyle ,
+                    owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Inspirational
+
+:Inspirational rdf:type :MusicalStyle ,
+                        owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#J-Pop
+
+:J-Pop rdf:type :MusicalStyle ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Jazz
+
+:Jazz rdf:type :MusicalStyle ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Jen_Ledger
+
+:Jen_Ledger rdf:type owl:NamedIndividual ,
+                     foaf:Person ;
+            
+            rdfs:seeAlso "http://en.wikipedia.org/wiki/Jen_Ledger" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#John_Cooper
+
+:John_Cooper rdf:type owl:NamedIndividual ,
+                      foaf:Person ;
+             
+             rdfs:seeAlso "http://en.wikipedia.org/wiki/John_Cooper_(musician)" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#K-Pop
+
+:K-Pop rdf:type :MusicalStyle ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Korey_Cooper
+
+:Korey_Cooper rdf:type owl:NamedIndividual ,
+                       foaf:Person ;
+              
+              rdfs:seeAlso "http://en.wikipedia.org/wiki/Korey_Cooper" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Latin_Music
+
+:Latin_Music rdf:type :MusicalStyle ,
+                      owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MD
+
+:MD rdf:type :MusicItem ,
+             owl:NamedIndividual ;
+    
+    rdfs:comment "Mini Disc" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#MagneticTape
+
+:MagneticTape rdf:type :MusicItem ,
+                       owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#New_Age
+
+:New_Age rdf:type :MusicalStyle ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Oliver_Riedel
+
+:Oliver_Riedel rdf:type owl:NamedIndividual ,
+                        foaf:Person ;
+               
+               rdfs:seeAlso "http://en.wikipedia.org/wiki/Oliver_Riedel" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Opera
+
+:Opera rdf:type :MusicalStyle ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Paul_Landers
+
+:Paul_Landers rdf:type owl:NamedIndividual ,
+                       foaf:Person ;
+              
+              rdfs:seeAlso "http://en.wikipedia.org/wiki/Paul_Landers" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Pop
+
+:Pop rdf:type :MusicalStyle ,
+              owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Rammstain
+
+:Rammstain rdf:type :MusicGroup ,
+                    owl:NamedIndividual ;
+           
+           rdfs:seeAlso "http://en.wikipedia.org/wiki/Rammstein#Band_members" ;
+           
+           :has_member :Christian_Lorenz ,
+                       :Christoph_Schneider ,
+                       :Oliver_Riedel ,
+                       :Paul_Landers ,
+                       :Richard_Z._Kruspe ;
+           
+           :in_style :Rock ;
+           
+           :has_member :Till_Lindemann .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Rap
+
+:Rap rdf:type :MusicalStyle ,
+              owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Reggae
+
+:Reggae rdf:type :MusicalStyle ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Richard_Z._Kruspe
+
+:Richard_Z._Kruspe rdf:type owl:NamedIndividual ,
+                            foaf:Person ;
+                   
+                   rdfs:seeAlso "http://en.wikipedia.org/wiki/Richard_Z._Kruspe" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Rock
+
+:Rock rdf:type :MusicalStyle ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Seth_Morrison
+
+:Seth_Morrison rdf:type owl:NamedIndividual ,
+                        foaf:Person ;
+               
+               rdfs:seeAlso "http://en.wikipedia.org/wiki/Seth_Morrison_(musician)" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Skillet
+
+:Skillet rdf:type :MusicGroup ,
+                  owl:NamedIndividual ;
+         
+         rdfs:seeAlso "http://en.wikipedia.org/wiki/Skillet_(band)" ;
+         
+         :in_style :Electronic_Music ;
+         
+         :has_member :Jen_Ledger ,
+                     :John_Cooper ,
+                     :Korey_Cooper ;
+         
+         :in_style :Rock ;
+         
+         :has_member :Seth_Morrison .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Soul
+
+:Soul rdf:type :MusicalStyle ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Stream
+
+:Stream rdf:type :MusicItem ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Till_Lindemann
+
+:Till_Lindemann rdf:type owl:NamedIndividual ,
+                         foaf:Person ;
+                
+                rdfs:seeAlso "http://en.wikipedia.org/wiki/Till_Lindemann" .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Torrent
+
+:Torrent rdf:type :MusicItem ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Vinyl
+
+:Vinyl rdf:type :MusicItem ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#World_Music
+
+:World_Music rdf:type :MusicalStyle ,
+                      owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
