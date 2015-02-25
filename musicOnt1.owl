@@ -486,19 +486,26 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Christian_Lorenz
 
-:Christian_Lorenz rdf:type owl:NamedIndividual ,
-                           foaf:Person ;
+:Christian_Lorenz rdf:type :MusicGroupMember ,
+                           owl:NamedIndividual ;
                   
-                  rdfs:seeAlso "http://en.wikipedia.org/wiki/Christian_Lorenz" .
+                  rdfs:seeAlso "http://en.wikipedia.org/wiki/Christian_Lorenz" ;
+                  
+                  :group_role :keyboard ,
+                              :samples ,
+                              :synthesizers .
 
 
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Christoph_Schneider
 
-:Christoph_Schneider rdf:type owl:NamedIndividual ,
-                              foaf:Person ;
+:Christoph_Schneider rdf:type :MusicGroupMember ,
+                              owl:NamedIndividual ;
                      
-                     rdfs:seeAlso "http://en.wikipedia.org/wiki/Christoph_Schneider" .
+                     rdfs:seeAlso "http://en.wikipedia.org/wiki/Christoph_Schneider" ;
+                     
+                     :group_role :drums ,
+                                 :percussion .
 
 
 
@@ -597,8 +604,8 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Jen_Ledger
 
-:Jen_Ledger rdf:type owl:NamedIndividual ,
-                     foaf:Person ;
+:Jen_Ledger rdf:type :MusicGroupMember ,
+                     owl:NamedIndividual ;
             
             rdfs:seeAlso "http://en.wikipedia.org/wiki/Jen_Ledger" .
 
@@ -606,8 +613,8 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#John_Cooper
 
-:John_Cooper rdf:type owl:NamedIndividual ,
-                      foaf:Person ;
+:John_Cooper rdf:type :MusicGroupMember ,
+                      owl:NamedIndividual ;
              
              rdfs:seeAlso "http://en.wikipedia.org/wiki/John_Cooper_(musician)" .
 
@@ -622,8 +629,8 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Korey_Cooper
 
-:Korey_Cooper rdf:type owl:NamedIndividual ,
-                       foaf:Person ;
+:Korey_Cooper rdf:type :MusicGroupMember ,
+                       owl:NamedIndividual ;
               
               rdfs:seeAlso "http://en.wikipedia.org/wiki/Korey_Cooper" .
 
@@ -661,10 +668,12 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Oliver_Riedel
 
-:Oliver_Riedel rdf:type owl:NamedIndividual ,
-                        foaf:Person ;
+:Oliver_Riedel rdf:type :MusicGroupMember ,
+                        owl:NamedIndividual ;
                
-               rdfs:seeAlso "http://en.wikipedia.org/wiki/Oliver_Riedel" .
+               rdfs:seeAlso "http://en.wikipedia.org/wiki/Oliver_Riedel" ;
+               
+               :group_role :bass .
 
 
 
@@ -677,10 +686,13 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Paul_Landers
 
-:Paul_Landers rdf:type owl:NamedIndividual ,
-                       foaf:Person ;
+:Paul_Landers rdf:type :MusicGroupMember ,
+                       owl:NamedIndividual ;
               
-              rdfs:seeAlso "http://en.wikipedia.org/wiki/Paul_Landers" .
+              rdfs:seeAlso "http://en.wikipedia.org/wiki/Paul_Landers" ;
+              
+              :group_role :backing_vocals ,
+                          :rhythm_guitar .
 
 
 
@@ -726,10 +738,14 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Richard_Z._Kruspe
 
-:Richard_Z._Kruspe rdf:type owl:NamedIndividual ,
-                            foaf:Person ;
+:Richard_Z._Kruspe rdf:type :MusicGroupMember ,
+                            owl:NamedIndividual ;
                    
-                   rdfs:seeAlso "http://en.wikipedia.org/wiki/Richard_Z._Kruspe" .
+                   rdfs:seeAlso "http://en.wikipedia.org/wiki/Richard_Z._Kruspe" ;
+                   
+                   :group_role :backing_vocals ,
+                               :keyboard ,
+                               :lead_guitar .
 
 
 
@@ -742,8 +758,8 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Seth_Morrison
 
-:Seth_Morrison rdf:type owl:NamedIndividual ,
-                        foaf:Person ;
+:Seth_Morrison rdf:type :MusicGroupMember ,
+                        owl:NamedIndividual ;
                
                rdfs:seeAlso "http://en.wikipedia.org/wiki/Seth_Morrison_(musician)" .
 
@@ -784,10 +800,13 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#Till_Lindemann
 
-:Till_Lindemann rdf:type owl:NamedIndividual ,
-                         foaf:Person ;
+:Till_Lindemann rdf:type :MusicGroupMember ,
+                         owl:NamedIndividual ;
                 
-                rdfs:seeAlso "http://en.wikipedia.org/wiki/Till_Lindemann" .
+                rdfs:seeAlso "http://en.wikipedia.org/wiki/Till_Lindemann" ;
+                
+                :group_role :harmonica ,
+                            :lead_vocals .
 
 
 
@@ -809,6 +828,83 @@ foaf:Person rdf:type owl:Class ;
 
 :World_Music rdf:type :MusicalStyle ,
                       owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#backing_vocals
+
+:backing_vocals rdf:type :MusicGroupRole ,
+                         owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#bass
+
+:bass rdf:type :MusicGroupRole ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#drums
+
+:drums rdf:type :MusicGroupRole ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#harmonica
+
+:harmonica rdf:type :MusicGroupRole ,
+                    owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#keyboard
+
+:keyboard rdf:type :MusicGroupRole ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#lead_guitar
+
+:lead_guitar rdf:type :MusicGroupRole ,
+                      owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#lead_vocals
+
+:lead_vocals rdf:type :MusicGroupRole ,
+                      owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#percussion
+
+:percussion rdf:type :MusicGroupRole ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#rhythm_guitar
+
+:rhythm_guitar rdf:type :MusicGroupRole ,
+                        owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#samples
+
+:samples rdf:type :MusicGroupRole ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/helen_yrofeeva/ontologies/2015/1/musicOnt#synthesizers
+
+:synthesizers rdf:type :MusicGroupRole ,
+                       owl:NamedIndividual .
 
 
 
